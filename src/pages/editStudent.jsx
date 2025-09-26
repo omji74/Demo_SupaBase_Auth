@@ -9,7 +9,7 @@ function EditStudent() {
 
   useEffect(() => {
     fetchStudent();
-  }, []);
+  }, [id]);
 
   async function fetchStudent() {
     const { data, error } = await supabase.from("students").select("*").eq("id", id).single();
